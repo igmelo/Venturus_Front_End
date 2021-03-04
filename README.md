@@ -2,7 +2,19 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.1.
 
+## Install Angular
+
+Run `npm install @angular/cli`
+
+## Install all project dependecies
+
+Run `npm install`
+
 ## Development server
+
+Please, first of all, open 2 terminal.
+
+Run `json-server --watch .\src\assets\data\db.json` to run the fake API. You can access `http://localhost:3000/players/` to see the stored data.
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
