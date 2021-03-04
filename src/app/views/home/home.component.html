@@ -1,0 +1,94 @@
+<p>
+    <mat-toolbar style="height: 50px">
+        <img class="logo" src="https://venturus.org.br/wp-content/uploads/2019/07/cropped-favicon.png">
+        <span>Squad Management Tools</span>
+    </mat-toolbar>
+</p>
+
+<div fxLayout="row" fxLayoutAlign="start top">
+    <mat-card class="example-card" style="margin: 2%;  border-radius: 10px;" fxFlex="50%">
+        <mat-card-header style="margin: 1%;">
+            <span style="color: rgba(88,52,127,255); font-weight: bold; font-size: large;">My Teams</span>
+            <span class="example-spacer"></span>
+            <mat-icon routerLink='/create-team' routerLinkActive="active" class="box-icon">
+                add_box</mat-icon>
+        </mat-card-header>
+
+        <mat-divider></mat-divider>
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th class="name-column">Name&nbsp;<i class="fa fa-sort" style="float: right; cursor: pointer"
+                            (click)="sort('id')"></i>
+                    </th>
+                    <th class="desc-column">Description&nbsp;<i class="fa fa-sort" style="float: right; cursor: pointer"
+                            (click)="sort('id')"></i>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let i = index; let player of players | orderBy: key: reverse" style="font-weight: bold;"
+                    (mouseover)="rowIndex = i" (mouseleave)="rowIndex = null">
+                    <td>{{player.player_name}} </td>
+
+                    <td>{{player.nationality}}
+                        <span class="only-show-on-hover" *ngIf="rowIndex == i">
+                            <mat-icon class="icon-color" style="font-size: 20px; float: right; cursor: pointer"
+                                #tooltip="matTooltip" matTooltip="Create" [matTooltipPosition]="position.value">
+                                create</mat-icon>
+                            <mat-icon class="icon-color" style="font-size: 20px; float: right; cursor: pointer"
+                                #tooltip="matTooltip" matTooltip="Share" [matTooltipPosition]="position.value">
+                                share</mat-icon>
+                            <mat-icon class="icon-color" style="font-size: 20px; float: right; cursor: pointer"
+                                #tooltip="matTooltip" matTooltip="Edit" [matTooltipPosition]="position.value">
+                                delete</mat-icon>
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+    </mat-card>
+
+    <div fxLayout="column" fxLayoutAlign="start top" fxFlex="100%" style="margin: 1%">
+        <mat-card class="example-card" style="margin: 2%; border-radius: 10px;" fxFlex="100%">
+            <mat-card-header style="margin: 1%; margin-bottom: 2%;">
+                <span style="color: rgba(88,52,127,255); font-weight: bold; font-size: large;">Top 5</span>
+            </mat-card-header>
+
+            <mat-divider></mat-divider>
+
+            <div fxLayout="row" fxLayoutAlign="start top" fxFlexAlign="center">
+                <div fxFlex="50%" style="padding-left: 2%; padding-right: 2%;">
+                    <div style="margin-bottom: 10px; margin-top: 20px;">
+                        <span style="color: rgb(44, 44, 44); font-weight: bold;">Highest avg age</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Player 1</li>
+                        <li class="list-group-item">Player 2</li>
+                        <li class="list-group-item">Player 3</li>
+                        <li class="list-group-item">Player 4</li>
+                        <li class="list-group-item">Player 5</li>
+                    </ul>
+
+                </div>
+                <div fxFlex="50%" style="padding-left: 2%; padding-right: 2%;">
+                    <div style="margin-bottom: 10px; margin-top: 20px;">
+                        <span style="color: rgb(44, 44, 44); font-weight: bold;">Lowest avg age</span>
+                    </div>
+                    <ul class="list-group">
+                        <li class="list-group-item">Player 1</li>
+                        <li class="list-group-item">Player 2</li>
+                        <li class="list-group-item">Player 3</li>
+                        <li class="list-group-item">Player 4</li>
+                        <li class="list-group-item">Player 5</li>
+                    </ul>
+                </div>
+            </div>
+        </mat-card>
+        <mat-card class="example-card" style="margin: 2%;" fxFlex="100%"></mat-card>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

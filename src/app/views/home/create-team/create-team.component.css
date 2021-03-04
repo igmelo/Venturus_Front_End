@@ -1,0 +1,81 @@
+.mat-toolbar {
+  background: linear-gradient(
+    to right,
+    rgba(190, 14, 79, 255),
+    rgba(139, 32, 110, 255)
+  );
+  color: white;
+}
+
+.box {
+  height: 200px;
+}
+
+.centro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.example-chip-list {
+  width: 50%;
+}
+
+.selector {
+  cursor: pointer;
+  border-radius: 5px;
+  width: 25%;
+}
+
+.list-group {
+  width: 60%;
+}
+
+.list-group-item {
+  background: linear-gradient(to top, rgba(231, 231, 231, 255), white);
+
+  border-style: dashed;
+}
+
+.fut-camp {
+  background: linear-gradient(
+    to top,
+    rgba(120, 45, 128, 255),
+    rgba(174, 58, 123, 255)
+  );
+}
+
+.btn {
+  display: block;
+  background-color: white;
+  opacity: 0.5;
+  height: 70px;
+  width: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  margin-top: 8%;
+}
+.bord {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 2px dashed rgb(231, 231, 231);
+  margin-left: 10%;
+}
+
+.button-save {
+  width: 80% !important;
+  margin-top: 10px;
+  background: linear-gradient(
+    to top,
+    rgba(120, 45, 128, 255),
+    rgba(174, 58, 123, 255)
+  );
+  color: white;
+}
+.logo {
+  height: 45px;
+  width: 45px;
+  filter: brightness(0) invert(1);
+  margin-right: 10px;
+}

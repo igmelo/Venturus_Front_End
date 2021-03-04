@@ -1,0 +1,74 @@
+:host {
+  background-color: gray;
+}
+
+.mat-toolbar {
+  background: linear-gradient(
+    to right,
+    rgba(190, 14, 79, 255),
+    rgba(139, 32, 110, 255)
+  );
+  color: white;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.mat-table {
+  width: 100%;
+}
+
+.name-column {
+  flex: none;
+  width: 30%;
+  padding-top: 5%;
+  font-size: 15px;
+  color: rgba(67, 67, 67, 255);
+}
+
+.table-hover > tbody > tr:hover {
+  background-color: rgba(248, 238, 247, 255);
+  color: rgba(172, 99, 138, 255);
+}
+
+.icon-color {
+  color: rgba(153, 69, 112, 255);
+}
+
+.desc-column {
+  padding-top: 5%;
+  width: 70% !important;
+  font-size: 15px;
+  color: rgba(67, 67, 67, 255);
+}
+.list-group {
+  background-color: rgb(235, 235, 235);
+  border-radius: 10px;
+}
+
+.list-group-item {
+  border-radius: 10px;
+  margin: 2px;
+}
+
+.box-icon {
+  cursor: pointer;
+  margin-bottom: 20px;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(rgb(190, 14, 79, 255)),
+    to(rgb(139, 32, 110, 255))
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transform: scale(2);
+}
+.logo {
+  height: 45px;
+  width: 45px;
+  filter: brightness(0) invert(1);
+  margin-right: 10px;
+}

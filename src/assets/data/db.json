@@ -1,0 +1,59 @@
+{
+    "players": [
+      {
+        "id": 1,
+        "player_name": "Cristiano Ronaldo",
+        "age": 36,
+        "nationality": "Portugal"
+      },
+      {
+        "id": 2,
+        "player_name": "Neymar",
+        "age": 29,
+        "nationality": "Brazil"
+      },
+      {
+        "id": 3,
+        "player_name": "Lionel Messi",
+        "age": 33,
+        "nationality": "Argentina"
+      },
+      {
+        "id": 4,
+        "player_name": "Kylian Mbappe",
+        "age": 22,
+        "nationality": "France"
+      },
+      {
+        "id": 5,
+        "player_name": "Mohamed Salah",
+        "age": 28,
+        "nationality": "Egypt"
+      },
+      {
+        "id": 6,
+        "player_name": "Ronaldinho Gaucho",
+        "age": 40,
+        "nationality": "Brazil"
+      },
+      {
+        "id": 7,
+        "player_name": "Zinedine Zidane",
+        "age": 48,
+        "nationality": "France"
+      },
+      {
+        "id": 8,
+        "player_name": "Marcelo Vieira",
+        "age": 32,
+        "nationality": "Brazil"
+      },
+      {
+        "id": 9,
+        "player_name": "SerGio Ram",
+        "age": 34,
+        "nationality": "Spain"
+      }
+    
+    ]
+  }

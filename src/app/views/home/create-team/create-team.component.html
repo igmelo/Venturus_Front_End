@@ -1,0 +1,131 @@
+<p>
+    <mat-toolbar style="height: 50px">
+        <img class="logo" src="https://venturus.org.br/wp-content/uploads/2019/07/cropped-favicon.png">
+        <span>Squad Management Tools</span>
+    </mat-toolbar>
+</p>
+
+<mat-card class="example-card" style="margin: 2%;">
+    <mat-card-header style="margin-top: 1%;">
+        <span style="color: rgba(88,52,127,255); font-weight: bold; font-size: x-large;">Create your Team</span>
+    </mat-card-header>
+
+    <mat-divider style="margin-top: 2%"></mat-divider>
+
+    <mat-card-content>
+
+    </mat-card-content>
+    <span
+        style="display: flex; justify-content: center; color: rgba(153,153,153,255); margin-top: 4%; margin-bottom: 4%; font-weight: bold; font-size: medium;">TEAM
+        INFORMATION</span>
+
+    <div fxLayout="row" fxLayoutAlign="start top" fxFlexAlign="center">
+        <div fxFlex="50%" style="padding-left: 10%;">
+            <div style="margin-bottom: 10px">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Team name</span>
+            </div>
+            <div class="input-group" style="width: 85%;">
+                <input type="text" class="form-control" placeholder="Insert team name">
+            </div>
+            <div style="margin-top: 20px; margin-bottom: 10px;">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Description</span>
+            </div>
+            <div class="input-group" style="width: 85%;">
+                <textarea type="text" class="form-control box"></textarea>
+            </div>
+        </div>
+        <div fxFlex="50%" style="padding-left: 5%;">
+            <div style="margin-bottom: 10px">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Team website</span>
+            </div>
+            <div class="input-group" style="width: 80%;">
+                <input type="text" class="form-control" placeholder="Insert team name" aria-label="Username">
+            </div>
+            <div style="margin-bottom: 10px; margin-top: 40px;">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Team type</span>
+            </div>
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1">Real</mat-radio-button>
+                <mat-radio-button value="2" style="margin-left: 40px">Fantasy</mat-radio-button>
+            </mat-radio-group>
+            <div style="margin-bottom: 10px; margin-top: 20px;">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Tags</span>
+            </div>
+
+            <mat-form-field class="example-chip-list">
+
+                <mat-chip-list #chipList aria-label="Fruit selection">
+                    <mat-chip *ngFor="let tag of tags" [selectable]="selectable" [removable]="removable"
+                        (removed)="remove(tag)">
+                        {{tag.name}}
+                        <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+                    </mat-chip>
+                    <input style="height: 40px; border-block: 10px;" [matChipInputFor]="chipList"
+                        [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="addOnBlur"
+                        (matChipInputTokenEnd)="add($event)">
+                </mat-chip-list>
+            </mat-form-field>
+
+        </div>
+    </div>
+
+
+    <span
+        style="display: flex; justify-content: center; color: rgba(153,153,153,255); margin-top: 4%; font-weight: bold; font-size: medium;">
+        CONFIGURE SQUAD</span>
+    <div fxLayout="row" fxLayoutAlign="start top" fxFlexAlign="center">
+        <div fxFlex="50%" style="padding-left: 10%;">
+            <div style="margin-bottom: 10px; margin-top: 30px;">
+                <div class="select">
+                    <span style="color: rgb(44, 44, 44); font-weight: bold; margin-right: 30px">Formation</span>
+                    <select class="selector">
+                        <option>Select</option>
+                        <option>3 - 3 - 4</option>
+                        <option>3 - 4 - 3</option>
+                        <option>3 - 5 - 2</option>
+                        <option>3 - 6 - 1</option>
+                    </select>
+                    <div class="select_arrow">
+                    </div>
+                    <mat-card class="fut-camp" style="width: 80%; height: 500px; margin-top: 20px">
+                        <div class="bord">
+                            <button class="btn"></button>
+
+                        </div>
+
+                    </mat-card>
+                    <div>
+                        <button class="button-save" mat-raised-button>Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="50%" style="padding-left: 5%;">
+            <div style="margin-bottom: 10px; margin-top: 30px;">
+                <span style="color: rgb(44, 44, 44); font-weight: bold;">Search Players</span>
+            </div>
+            <div class="input-group" style="width: 60%; margin-bottom: 5px;">
+                <input type="text" class="form-control search-player" placeholder="Insert player name" name="firstName"
+                    [(ngModel)]="firstName" (ngModelChange)="Search()">
+            </div>
+            <ul class="list-group" *ngFor="let player of players">
+                <li class="list-group-item" style="margin-top: 10px;">
+                    <span style="color: rgb(44, 44, 44); font-weight: bold;">
+                        Name: </span> <span style="color: rgba(195,4,63,255)">{{player.player_name}}</span>
+                    <div style="float: right">
+                        <span style="color: rgb(44, 44, 44); font-weight: bold;">
+                            Age: </span> <span style="color: rgba(195,4,63,255)">{{player.age}}</span>
+                    </div>
+                    <br>
+                    <div style="margin-top: 5px">
+                        <span style="color: rgb(44, 44, 44); font-weight: bold;">
+                            Nationality: </span><span style="color: rgba(195,4,63,255)">
+                            {{player.nationality}}</span>
+                    </div>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+</mat-card>
